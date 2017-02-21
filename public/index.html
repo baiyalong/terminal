@@ -7,28 +7,14 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <script src="/socket.io/socket.io.js"></script>
     <script src="/xterm/xterm.js"></script>
+    <script src="/xterm/addons/attach/attach.js"></script>
     <script src="/xterm/addons/fit/fit.js"></script>
-    <script src="/javascripts/app.js"></script>
+    <script src="/xterm/addons/fullscreen/fullscreen.js"></script>
 </head>
 
 <body>
     <div id="terminal"></div>
-    <script>
-        var term = new Terminal();
-
-        term.open(document.getElementById('#terminal'));
-        term.write('Hello from \033[1;3;31mxterm.js\033[0m $ ')
-        // term.fit()
-    </script>
-    <script>
-        var socket = io.connect();
-        socket.on('news', function (data) {
-            console.log(data);
-            socket.emit('my other event', {
-                my: 'data'
-            });
-        });
-    </script>
+    <script src="/javascripts/app.js"></script>
 </body>
 
 </html>
