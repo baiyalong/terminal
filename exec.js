@@ -14,7 +14,12 @@ exports.create = (c_id, callback) => {
 }
 exports.start = (e_id, callback) => {
     var e = docker.getExec(e_id)
-    e.start({}, callback)
+    e.start({
+        hijack: true,
+        stdin: true,
+        Detach: false,
+        Tty: true
+    }, callback)
 }
 exports.resize = (e_id, callback) => {
     var e = docker.getExec(e_id)
