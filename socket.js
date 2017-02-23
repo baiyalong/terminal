@@ -1,3 +1,5 @@
+var exec = require('./exec')
+
 module.exports = io => {
     io
         .on('connection', function (socket) {
