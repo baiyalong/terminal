@@ -3,7 +3,7 @@ console.log('app.js')
 id = window
     .location
     .search
-    .split('=')[1]
+    .split('=')[1] || '5319d00b13ce'
 console.log(id)
 
 // var term = new Terminal(); term.open(document.getElementById('#terminal'));
@@ -13,6 +13,7 @@ var socket = io.connect();
 // socket.on('news', function (data) {     console.log(data); socket.emit('my
 // other event', {my: 'data'}); });
 socket.on('connect', function () {
+    socket.emit('exec', {id})
     term = new Terminal();
 
     term.on('data', function (data) {
