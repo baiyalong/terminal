@@ -21,11 +21,11 @@ exports.start = (e_id, callback) => {
         Tty: true
     }, callback)
 }
-exports.resize = (e_id, callback) => {
+exports.resize = (e_id, size, callback) => {
     var e = docker.getExec(e_id)
-    e.resize({}, callback)
+    e.resize(size, callback)
 }
 exports.inspect = (e_id, callback) => {
     var e = docker.getExec(e_id)
-    e.resize({}, callback)
+    e.inspect(callback)
 }
